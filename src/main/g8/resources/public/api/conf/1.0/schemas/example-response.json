@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Pensions protection information",
+  "type": "object",
+  "properties": {
+    "hello": {
+      "description": "An example json response",
+      "type": "string",
+      "example": "world"
+    }
+  },
+  "required": ["hello"]
+}

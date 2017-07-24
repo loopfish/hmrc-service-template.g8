@@ -1,0 +1,3 @@
+GET        /definition                                  controllers.DocumentationController.definition
+
+GET        /conf/:version/*file                         controllers.DocumentationController.raml(version, file)

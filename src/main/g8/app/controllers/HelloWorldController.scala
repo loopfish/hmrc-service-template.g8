@@ -4,10 +4,13 @@ import javax.inject._
 
 import play.api.mvc.{Action, AnyContent, Controller}
 
-@Singleton
-class HelloWorldController @Inject() extends Controller {
+import scala.concurrent.Future
 
-	def helloWorld(): Action[AnyContent] = Action {
-		Ok
-	}
+@Singleton
+class HelloWorldController @Inject() extends Controller with HeaderValidator {
+
+  def helloWorld(): Action[AnyContent] = validateAccept(acceptHeaderValidationRules).async {
+    implicit request =>
+      Future successful Ok
+  }
 }

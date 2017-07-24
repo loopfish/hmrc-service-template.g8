@@ -25,7 +25,8 @@ lazy val root = (project in file("."))
       "org.mockito" % "mockito-core" % "2.8.9" % Test,
       "org.scalatestplus.play" %% "scalatestplus-play" % "2.0.0" % Test
     ),
-    publishingSettings
+    publishingSettings,
+    unmanagedResourceDirectories in Compile += baseDirectory.value / "resources"
   )
   .enablePlugins(PlayScala, SbtGitVersioning, SbtDistributablesPlugin)
 

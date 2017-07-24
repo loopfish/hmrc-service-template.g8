@@ -1,0 +1,20 @@
+{
+  "scopes": [
+    {
+      "key": "read:pension-protection",
+      "name": "View pension protection information",
+      "description": "Allow pension scheme administrators to view any protections that are in place"
+    }
+  ],
+  "api": {
+    "name": "Pension Scheme Administrator Lookup",
+    "description": "The pension scheme administrator lookup API allows scheme administrators to check if any protections are currently in place against a given reference number.",
+    "context": "pension-scheme-administrator-lookup",
+    "versions": [
+      {
+        "version": "1.0",
+        "status": "PROTOTYPED"
+      }
+    ]
+  }
+}
