@@ -1,1 +1,3 @@
-case class Model(parameter: String)
+package models
+
+case class Model(hello: String)
