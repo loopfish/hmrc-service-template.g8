@@ -11,7 +11,7 @@ import uk.gov.hmrc.auth.filter.{AuthorisationFilter, FilterConfig}
 import uk.gov.hmrc.play.audit.filters.AuditFilter
 import uk.gov.hmrc.play.audit.http.config.LoadAuditingConfig
 import uk.gov.hmrc.play.audit.http.connector.AuditConnector
-import uk.gov.hmrc.play.config.inject.{DefaultServicesConfig, RunMode}
+import uk.gov.hmrc.play.config.inject.{DefaultRunMode, DefaultServicesConfig, RunMode}
 import uk.gov.hmrc.play.http.logging.filters.LoggingFilter
 import uk.gov.hmrc.play.http.ws._
 
@@ -41,7 +41,7 @@ class MicroserviceAuditFilter @Inject()(implicit val mat: Materializer, ec: Exec
   override def appName: String = configuration.getString("appName").get
 }
 
-class MicroserviceAuditConnector @Inject()(val environment: Environment) extends AuditConnector with RunMode {
+class MicroserviceAuditConnector @Inject()(val environment: Environment) extends AuditConnector {
   override lazy val auditingConfig = LoadAuditingConfig(s"auditing")
 }
 
