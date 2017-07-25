@@ -12,3 +12,4 @@ class DocumentationController extends AssetsBuilder(LazyHttpErrorHandler) with C
 
   def raml(version: String, file: String): Action[AnyContent] = at(s"/public/api/conf/$version", file)
 }
+
