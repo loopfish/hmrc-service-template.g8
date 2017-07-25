@@ -1,4 +1,4 @@
-import java.net.InetSocketAddress
+import java.net.{ConnectException, InetSocketAddress}
 import java.util.concurrent.TimeUnit.{MILLISECONDS, SECONDS}
 import javax.inject.{Inject, Singleton}
 
@@ -47,9 +47,13 @@ class ServiceLocator @Inject()(configuration: Configuration, serviceConfig: Defa
     ws.url(serviceUrl).withHeaders("Content-Type" -> "application/json").post(registration) map {
       result =>
         result.status match {
+          //Expected response from service locator service
           case NO_CONTENT => Logger.info("Service is registered on the service locator")
           case _ => Logger.error(s"Service could not register on the service locator: ${result.body}")
         }
+    } recover {
+      //Occurs if the required services aren't started up
+      case r: ConnectException => Logger.error(s"Service could not register on the service locator: ${r.getMessage}")
     }
   }
 
