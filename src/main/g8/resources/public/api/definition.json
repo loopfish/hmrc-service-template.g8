@@ -1,15 +1,15 @@
 {
   "scopes": [
     {
-      "key": "read:pension-protection",
-      "name": "View pension protection information",
-      "description": "Allow pension scheme administrators to view any protections that are in place"
+      "key": "whether the api is read or write",
+      "name": "The name of the endpoint",
+      "description": "High level description of the API endpoint"
     }
   ],
   "api": {
-    "name": "Pension Scheme Administrator Lookup",
-    "description": "The pension scheme administrator lookup API allows scheme administrators to check if any protections are currently in place against a given reference number.",
-    "context": "pension-scheme-administrator-lookup",
+    "name": "Name of the API",
+    "description": "Describe in detail what information the API gives back to the user",
+    "context": "What area the API covers",
     "versions": [
       {
         "version": "1.0",

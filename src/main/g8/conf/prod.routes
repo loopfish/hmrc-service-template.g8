@@ -1,4 +1,4 @@
-->         /$name$               app.Routes
+->         /$name$             app.Routes
 
 ->         /api                  definition.Routes
 ->         /                     health.Routes
