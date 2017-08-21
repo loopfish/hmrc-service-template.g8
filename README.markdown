@@ -9,7 +9,7 @@ To create a template service:
 2. To create a generic microservice run the command <br>
 `sbt new nkaraolis/hmrc-service-template.g8` <br>
 If you want to create a frontend run the command <br>
-`sbt new nkaraolis/hmrc-service-template.g8 -b Frontend`
+`sbt new nkaraolis/hmrc-service-template.g8 -b Frontend` <br>
 Or if you want to create a third party API run the command <br>
 `sbt new nkaraolis/hmrc-service-template.g8 -b API`
 3. Enter the name of your new service when prompted and then the new project will be created
